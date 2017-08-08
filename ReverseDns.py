@@ -5,7 +5,8 @@ print("Hmm evet bende bunu hiç düşünememiştim "+str(len(sys.argv)))
 deger=1
 
 #print(socket.gethostbyname("ce.istanbul.edu.tr"))
-if len(sys.argv)>1:
+try:
+  if len(sys.argv)>1:
       while deger<len(sys.argv):
          argument=sys.argv[deger]
          hos=str(argument)
@@ -13,7 +14,8 @@ if len(sys.argv)>1:
          socket.timeout(20)
          print(argument+": "+temp)
          deger=deger+1
-
+except:
+    print("Can't resolve your Hostname")
 """
 from urllib.parse import urlparse
 ParsingObj=urlparse("http://ce.istanbul.edu.tr")
